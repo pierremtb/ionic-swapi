@@ -52,7 +52,7 @@ export class StorageService {
 
   public async setFilms(films: Films) {
     await this.storage.set(FILMS_KEY, films.results);
-    this.films.next(films.results);
+    this.films.next(films.results.sort(this.sortFilms));
   }
 }
 

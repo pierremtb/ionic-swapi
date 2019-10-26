@@ -32,7 +32,12 @@
         <li *ngFor="let character of characters">
           {{ character.name }}
         </li>
-        <li *ngIf="!characters">Loading...</li>
+        <div *ngIf="!characters">
+          <li *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
+              <ion-skeleton-text animated style="width: 50%">
+              </ion-skeleton-text>
+          </li>
+        </div>
       </ul>
     </ion-card-content>
   </ion-card>
@@ -45,7 +50,12 @@
         <li *ngFor="let item of planets">
           {{ item.name }}
         </li>
-        <li *ngIf="!planets">Loading...</li>
+        <div *ngIf="!planets">
+          <li *ngFor="let i of [0,1,2]">
+              <ion-skeleton-text animated style="width: 50%">
+              </ion-skeleton-text>
+          </li>
+        </div>
       </ul>
     </ion-card-content>
   </ion-card>
@@ -58,7 +68,12 @@
         <li *ngFor="let item of starships">
           {{ item.name }}
         </li>
-        <li *ngIf="!starships">Loading...</li>
+        <div *ngIf="!starships">
+          <li *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10]">
+              <ion-skeleton-text animated style="width: 50%">
+              </ion-skeleton-text>
+          </li>
+        </div>
       </ul>
     </ion-card-content>
   </ion-card>
@@ -71,7 +86,12 @@
         <li *ngFor="let item of vehicles">
           {{ item.name }}
         </li>
-        <li *ngIf="!vehicles">Loading...</li>
+        <div *ngIf="!vehicles">
+          <li *ngFor="let i of [0,1,2,3]">
+              <ion-skeleton-text animated style="width: 50%">
+              </ion-skeleton-text>
+          </li>
+        </div>
       </ul>
     </ion-card-content>
   </ion-card>
@@ -84,7 +104,12 @@
         <li *ngFor="let item of species">
           {{ item.name }}
         </li>
-        <li *ngIf="!species">Loading...</li>
+        <div *ngIf="!species">
+          <li *ngFor="let i of [0,1,2,3]">
+              <ion-skeleton-text animated style="width: 50%">
+              </ion-skeleton-text>
+          </li>
+        </div>
       </ul>
     </ion-card-content>
   </ion-card>
