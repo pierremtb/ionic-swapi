@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Swapi
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <ion-list-header>
+      Episodes
+    </ion-list-header>
+    <ion-virtual-scroll
+      [items]="films" approxItemHeight="90px">
+      <ion-item *virtualItem="let film; let itemBounds = bounds;"
+         [routerLink]="['/film/' + film.episode_id]">
+        <ion-label>
+          <h2>Ep {{film.episode_id }}: {{ film.title }}</h2>
+          <h3>{{ film.release_date.substring(0, 4) }}</h3>
+          <p>Directed by {{ film.director }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-virtual-scroll>
+    <div *ngIf="!films">
+      <ion-item *ngFor="let i of [0,1,2,3,4,5,6]">
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%">
+            </ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%">
+            </ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%">
+            </ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

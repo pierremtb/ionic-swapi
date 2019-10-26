@@ -1,0 +1,7 @@
+{
+  "name": "ionicSwapi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

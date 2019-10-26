@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="film">
+      Ep {{film.episode_id }}: {{ film.title }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen *ngIf="film">
+  <ion-card>
+   <ion-card-header>
+      <ion-card-title>Details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li>Director: {{ film.director }}</li>
+        <li>Producer: {{ film.producer }}</li>
+        <li>Release: {{ film.release_date }}</li>
+      </ul>
+      <p class="ion-padding-top">{{ film.opening_crawl }}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+   <ion-card-header>
+      <ion-card-title>Characters</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li *ngFor="let character of characters">
+          {{ character.name }}
+        </li>
+        <li *ngIf="!characters">Loading...</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+   <ion-card-header>
+     <ion-card-title>Planets</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li *ngFor="let item of planets">
+          {{ item.name }}
+        </li>
+        <li *ngIf="!planets">Loading...</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+   <ion-card-header>
+     <ion-card-title>Starships</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li *ngFor="let item of starships">
+          {{ item.name }}
+        </li>
+        <li *ngIf="!starships">Loading...</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+   <ion-card-header>
+     <ion-card-title>Vehicles</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li *ngFor="let item of vehicles">
+          {{ item.name }}
+        </li>
+        <li *ngIf="!vehicles">Loading...</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+   <ion-card-header>
+     <ion-card-title>Species</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li *ngFor="let item of species">
+          {{ item.name }}
+        </li>
+        <li *ngIf="!species">Loading...</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
